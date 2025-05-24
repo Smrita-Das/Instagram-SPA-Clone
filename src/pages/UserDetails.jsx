@@ -1,15 +1,14 @@
 import { use } from "react";
 import UsersData from "../UsersData";
 import { useParams } from "react-router-dom";
+import Feed from "../components/Feed";
 
 
 
 function UserDetails(){
     let {username} = useParams()
     let user = UsersData.find(user => user.username === username);
-    if(!user){
-        return <h1 className="text-2xl text-center mt-24 font-black">User not found</h1>
-    }
+    
     return(
         <>
         <div className="w-[600px] mx-auto mt-24 mb-24 flex gap-5 items-center">
@@ -30,6 +29,15 @@ function UserDetails(){
 
         </div>
         </div>
+
+
+<div className="">
+    {
+        user.posts.map(photo=> <Feed img={photo.pic} />)
+    }
+</div>
+
+
         </>
     )
 }
