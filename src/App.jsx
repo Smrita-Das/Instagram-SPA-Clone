@@ -9,7 +9,8 @@ import UsersData from './UsersData'
 import Navbar from './components/Navbar'
 import About from './pages/About'
 import Error from './pages/Error'
-
+import UserCard from './components/UserCard'
+import UserDetails from './pages/UserDetails'
 
 function App() {
   
@@ -22,6 +23,8 @@ function App() {
 <Route path='/' element= {<Home/>}/>
 <Route path='/about' element= {<About/>}/>
 <Route path='/requests' element= {<Requests/>}/>
+{/* <Route path='/usercard' element={<UserCard/>}/> */}
+<Route path='/:username' element={<UserDetails/>}/>
 <Route path='*' element={<Error/>}/>
 
 </Routes>
