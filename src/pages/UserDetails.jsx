@@ -31,10 +31,13 @@ function UserDetails(){
         </div>
 
 
-<div className="">
-    {
-        user.posts.map(photo=> <Feed img={photo.pic} />)
-    }
+<div className="w-[800px] mx-auto">
+    <div className="flex flex-wrap gap-2">
+        {
+        user.posts.map(photo=> <Feed img={photo.pic} id={photo.id} />)
+      }
+    </div>
+    
 </div>
 
 
